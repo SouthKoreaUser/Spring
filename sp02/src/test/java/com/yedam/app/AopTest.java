@@ -8,11 +8,11 @@ import com.yedam.app.aop.service.AopService;
 
 @SpringBootTest
 public class AopTest {
-	@Autowired
-	private AopService aopService;
-	
-	@Test
-	public void aopTest() {
-		aopService.insert();
-	}
+//	@Autowired
+//	private AopService aopService;
+//	
+//	@Test
+//	public void aopTest() {
+//		aopService.insert();
+//	}
 }

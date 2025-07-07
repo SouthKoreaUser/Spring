@@ -50,9 +50,10 @@ public class EmpController {
 	}
 	
 	// 등록 - 페이지 : GET
-	@GetMapping("empinsert")
+	@GetMapping("empInsert")
 	public String empInsertForm() {
 		return "emp/insert";
+		// classpath:/templates/emp/insert.html
 	}
 	
 	// 등록 - 처리 : POST => <form/> submit / QueryString
@@ -62,7 +63,7 @@ public class EmpController {
 		String url = null;
 		if(eid > -1) {
 			// 정상적으로 등록
-			url = "redirect:empinfo?employeeId=" + eid;
+			url = "redirect:empInfo?employeeId=" + eid;
 		}else {
 			// 등록되지 않은 경우
 			url = "redirect:empList";
@@ -86,7 +87,7 @@ public class EmpController {
 		return empService.modifyInfo(empVO);
 	}
 	
-	// 삭제 - 처리 : GET
+	// 삭제 - 처리 : GET => QureyString : empDelete?key=value
 	@GetMapping("empDelete")
 	public String empDelete(Integer employeeId) {
 		empService.removeInfo(employeeId);

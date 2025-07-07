@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{common/layouts/default_layout}" 
+      layout:fragment="Content">
+<body>
+<div class="container">
+	<form name="insertForm"
+		th:action="@{/empInsert}" method="post">
+		<h3>사원 정보 등록</h3>
+		<div>
+			<label for="ename">이름</label>
+			<input type="text" id="ename" name="lastName">
+		</div>
+		<div>
+			<label for="email">이메일</label>
+			<input type="text" id="email" name="email">
+		</div>
+		<div>
+			<label for="hDate">입사일</label>
+			<input type="text" id="hDate" name="hireDate">
+		</div>
+		<div>
+			<label for="job">업무</label>
+			<input type="text" id="job" name="jobId">
+		</div>
+		<div>
+			<label for="sal">급여</label>
+			<input type="number" step="0.01" min="0" id="sal" name="salary">
+		</div>
+			<button type="submit">등록</button>
+		</form>
+	</div>
+	<script>
+		${insertForm}.on('submit', validationCheck);
+		
+		function validationCheck(event){
+			// submit 이벤트 일시정지
+			event.preventDefault();
+			
+			// 이름
+			let nameTag = $('form[name="insertForm"] [name="lastName"]')
+			if(nameTag.val() == ''){
+				nameTag.focus();
+				return;
+			}
+				
+			// 이메일
+			let emailTag = $(insertForm).children('[name="email"]')
+			if(emailTag.val() == ''){
+				emailTag.focus();
+				return;
+			}
+			
+			// 업무
+			let jobTag = $('form[name="insertFrom"] *').find('[name="jobId"]');
+			if(jobTag.val() == ''){
+				jobTag.focus();
+				return;
+			}
+		}
+	</script>
+</body>
+</html>

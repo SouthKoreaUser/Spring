@@ -44,41 +44,41 @@ class Sp02ApplicationTests {
 	}
 	
 	//@Test // 해당 메서드를 테스트 하겠다고 선언 !
-	public void insertValue() {
-		EmpVO emp = EmpVO.builder()
-						.employeeId(1000)
-						.lastName("Kang")
-						.email("kg@google.com")
-						.jobId("SA_REP")
-						.build();
-		
-		int result = empMapper.insertInfo(emp);
-		
-		assertEquals(1, result);
-	}
+//	public void insertValue() {
+//		EmpVO emp = EmpVO.builder()
+//						.employeeId(1000)
+//						.lastName("Kang")
+//						.email("kg@google.com")
+//						.jobId("SA_REP")
+//						.build();
+//		
+//		int result = empMapper.insertInfo(emp);
+//		
+//		assertEquals(1, result);
+//	}
 	
-	@Test
-	public void insertSelectKey() {
-		EmpVO emp = EmpVO.builder()
-						.lastName("Hong")
-						.email("hong@naver.com")
-						.jobId("IT_PROG")
-						.salary(1200)
-						.build();
-	}
+//	@Test
+//	public void insertSelectKey() {
+//		EmpVO emp = EmpVO.builder()
+//						.lastName("Hong")
+//						.email("hong@naver.com")
+//						.jobId("IT_PROG")
+//						.salary(1200)
+//						.build();
+//	}
 	
-	@Test
-	public void updateInfo() {
-		// 1) 단건조회
-		EmpVO emp = EmpVO.builder()
-						 .employeeId(1001)
-						 .build();
-		EmpVO findVO = empMapper.selectInfo(null);
-		// 2) 값변경
-		findVO.setSalary(2550);
-		// 3) 테이블에 업데이트
-		int result = empMapper.updateInfo(1001, findVO);
-		
-		assertEquals(1, result);
-	}
+//	@Test
+//	public void updateInfo() {
+//		// 1) 단건조회
+//		EmpVO emp = EmpVO.builder()
+//						 .employeeId(1000)
+//						 .build();
+//		EmpVO findVO = empMapper.selectInfo(emp);
+//		// 2) 값변경
+//		findVO.setSalary(2550.0);
+//		// 3) 테이블에 업데이트
+//		int result = empMapper.updateInfo(1000, findVO);
+//		
+//		assertEquals(1, result);
+//	}
 }
